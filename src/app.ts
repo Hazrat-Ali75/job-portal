@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import authRoutes from './routes/authRoutes';
+import jobRoutes from './routes/jobRoute';
 
 //configuration
 const app = express();
@@ -11,6 +12,7 @@ app.use(express.json());
 //routes
 
 app.use("/api/auth", authRoutes);
+app.use("/api/job", jobRoutes)
 
 
 app.get('/', (req, res) => {
