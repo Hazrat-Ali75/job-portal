@@ -22,7 +22,7 @@ export async function registerUser(
 
     if (!user) throw new Error("Failed to register user");
 
-    return user; // single object
+    return user;
 }
 
 // LOGIN USER
@@ -45,7 +45,7 @@ export async function loginUser(email: string, password: string) {
     const token = jwt.sign(
         { userId: user.id, role: user.role },
         JWT_SECRET,
-        { expiresIn: "1m" }
+        { expiresIn: "1h" }
     );
 
     return { token, user };
